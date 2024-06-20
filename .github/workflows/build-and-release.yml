@@ -45,7 +45,7 @@ jobs:
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
-        filename: 'inochi-session-linux-x86_64.zip'
+        filename: 'puppetstring-viewer-linux-x86_64.zip'
         directory: 'out/'
         path: '*'
 
@@ -53,7 +53,16 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-          files: 'out/inochi-session-linux-x86_64.zip'
+          files: 'out/puppetstring-viewer-linux-x86_64.zip'
+
+    - name: Make Artifact of ZIP
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-linux
+        path: |
+          out/puppetstring-viewer-linux-x86_64.zip
+          version.txt
+        retention-days: 1
 
   windows-build:
     runs-on: windows-latest
@@ -93,7 +102,7 @@ jobs:
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
-        filename: 'inochi-session-win32-x86_64.zip'
+        filename: 'puppetstring-viewer-win32-x86_64.zip'
         directory: 'out/'
         path: '*'
 
@@ -101,14 +110,14 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-          files: out/inochi-session-win32-x86_64.zip
+          files: out/puppetstring-viewer-win32-x86_64.zip
 
     - name: Make Artifact of ZIP
       uses: actions/upload-artifact@v3
       with:
         name: release-win32
         path: |
-          out/inochi-session-win32-x86_64.zip
+          out/puppetstring-viewer-win32-x86_64.zip
           version.txt
         retention-days: 1
 
@@ -191,7 +200,7 @@ jobs:
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
-        filename: 'inochi-session-macOS.zip'
+        filename: 'puppetstring-viewer-macOS.zip'
         directory: 'out/'
         path: '*'
 
@@ -200,6 +209,6 @@ jobs:
       with:
         name: release-osx
         path: |
-          out/inochi-session-macOS.zip
+          out/puppetstring-viewer-macOS.zip
           version.txt
         retention-days: 1
