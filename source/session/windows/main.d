@@ -74,6 +74,8 @@ protected:
             }
         }
 
+        /*
+
         if (showUI) {
             uiImBeginMainMenuBar();
                 vec2 avail = uiImAvailableSpace();
@@ -193,6 +195,8 @@ protected:
             uiImEndMainMenuBar();
         }
 
+        */
+
         version(linux) dpUpdate();
     }
 
@@ -216,7 +220,7 @@ public:
             inSettingsGet!InochiWindowSettings("window", InochiWindowSettings(1024, 1024));
 
         import session.ver;
-        super("Inochi Session %s".format(INS_VERSION), windowSettings.width, windowSettings.height);
+        super("Puppetstring", windowSettings.width, windowSettings.height);
         
         // Initialize Inochi2D
         inInit(&inGetTime);
