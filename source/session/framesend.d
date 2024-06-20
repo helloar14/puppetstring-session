@@ -33,12 +33,12 @@ void insInitFrameSending() {
         loadSuccessful = loadMode == Spout2Support.spout2;
         
         if (loadSuccessful) {
-            string senderName = "Inochi Session";
+            string senderName = "Puppetstring";
             spHandle = spGetSpout();
 
             int i = 1;
             while (spFindSenderName(spHandle, cast(char*)senderName.toStringz)) {
-                senderName = "Inochi Session (%s)".format(i);
+                senderName = "Puppetstring (%s)".format(i);
             }
 
             spSetSenderName(spHandle, senderName.toStringz);
