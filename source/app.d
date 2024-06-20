@@ -21,13 +21,13 @@ import std.process;
 
 
 void main(string[] args) {
-    insLogInfo("Inochi Session %s, args=%s", INS_VERSION, args[1..$]);
+    insLogInfo("Puppetstring args=%s", args[1..$]);
 
     // Set the application info
     InApplication appInfo = InApplication(
-        "net.inochi2d.InochiSession",   // FQDN
-        "inochi-session",               // Config dir
-        "Inochi Session"                // Human-readable name
+        "net.ar14.Puppetstring",   // FQDN
+        "puppetstring",               // Config dir
+        "Puppetstring"                // Human-readable name
     );
     inSetApplication(appInfo);
 
