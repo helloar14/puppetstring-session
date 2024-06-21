@@ -71,43 +71,6 @@ configuration "win32-full" {
 	
 	dependency "bindbc-spout2" version="~>0.1.1"
 
-	lflags "/SUBSYSTEM:windows" "/ENTRY:mainCRTStartup" platform="window-dmd"
-	sourceFiles "build-aux\\windows\\inochi-session.res"
-}
-
-// Linux nightly build
-configuration "linux-nightly" {
-
-	platforms "linux"
-	targetType "executable"
-	subConfiguration "i2d-imgui" "static_dynamicCRT"
-	versions "InNightly"
-	
-	dependency "dportals" version="~>0.1.0"
-}
-
-// macOS nightly build
-configuration "osx-nightly" {
-	platforms "osx"
-	targetType "executable"
-
-	targetPath "out/Inochi Session.app/Contents/MacOS"
-
-	subConfiguration "i2d-imgui" "dynamic_dynamicCRT"
-	dflags "-force-dwarf-frame-section=false"
-	lflags "-rpath" "@executable_path/../Frameworks" "-rpath" "@executable_path/."
-
-	versions "InNightly"
-}
-
-// Windows nightly build
-configuration "win32-nightly" {
-	platforms "windows"
-	targetType "executable"
-	versions "InBranding" "InNightly"
-	
-	dependency "bindbc-spout2" version="~>0.1.1"
-
-	lflags "/SUBSYSTEM:windows" "/ENTRY:mainCRTStartup" platform="window-dmd"
+	lflags "/SUBSYSTEM:windows" "/ENTRY:mainCRTStartup" platform="windows-dmd"
 	sourceFiles "build-aux\\windows\\inochi-session.res"
 }
