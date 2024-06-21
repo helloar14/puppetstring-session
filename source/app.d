@@ -21,7 +21,7 @@ import std.process;
 
 
 void main(string[] args) {
-    insLogInfo("Puppetstring args=%s", args[1..$]);
+    //insLogInfo("Puppetstring args=%s", args[1..$]);
 
     // Set the application info
     InApplication appInfo = InApplication(
