@@ -51,8 +51,6 @@ void main(string[] args) {
     while(window.isAlive) {
         window.update();
     }
-
-    SDL_MaximizeWindow(window);
     
     insCleanupExpressions();
     insLuaUnload();
