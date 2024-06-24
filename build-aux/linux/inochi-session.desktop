@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=inochi-session
-Exec=inochi-session
+Name=Puppetstring Model Viewer
+Exec=PuppetstringModelViewer
 Icon=icon_x256
 Type=Application
 Categories=Utility
