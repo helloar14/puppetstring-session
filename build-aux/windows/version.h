@@ -8,11 +8,11 @@
 #define VER_PRODUCTVERSION_STR      "0.8.1\0"
 
 #define VER_COMPANYNAME_STR         "AR14.works"
-#define VER_FILEDESCRIPTION_STR     "Puppetstring Viewer"
-#define VER_INTERNALNAME_STR        "puppetstring-viewer"
+#define VER_FILEDESCRIPTION_STR     "Puppetstring Model Viewer"
+#define VER_INTERNALNAME_STR        "puppetstring-model-viewer"
 #define VER_LEGALCOPYRIGHT_STR      "Copyright © 2024 AR14.works"
-#define VER_ORIGINALFILENAME_STR    "Viewer.exe"
-#define VER_PRODUCTNAME_STR         "Puppetstring Viewer"
+#define VER_ORIGINALFILENAME_STR    "PuppetstringModelViewer.exe"
+#define VER_PRODUCTNAME_STR         "Puppetstring Model Viewer"
 
 #define VER_COMPANYDOMAIN_STR       "AR14.works"
 
