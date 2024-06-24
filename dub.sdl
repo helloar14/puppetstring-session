@@ -1,4 +1,4 @@
-name "puppetstring-viewer"
+name "puppetstring-model-viewer"
 description "Stripped version of Inochi Session to be included as part of Puppetstring."
 authors "AR14.works"
 copyright "Copyright © 2024, AR14.works"
