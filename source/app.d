@@ -21,13 +21,13 @@ import std.process;
 
 
 void main(string[] args) {
-    insLogInfo("Puppetstring args=%s", args[1..$]);
+    insLogInfo("Puppetstring Model Viewer args=%s", args[1..$]);
 
     // Set the application info
     InApplication appInfo = InApplication(
-        "net.ar14.Puppetstring",   // FQDN
-        "puppetstring",               // Config dir
-        "Puppetstring"                // Human-readable name
+        "net.ar14.PuppetstringModelViewer",   // FQDN
+        "puppetstring-model-viewer",               // Config dir
+        "Puppetstring Model Viewer"                // Human-readable name
     );
     inSetApplication(appInfo);
 
