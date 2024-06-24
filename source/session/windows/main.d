@@ -220,7 +220,7 @@ public:
             inSettingsGet!InochiWindowSettings("window", InochiWindowSettings(1024, 1024));
 
         import session.ver;
-        super("Puppetstring", windowSettings.width, windowSettings.height);
+        super("Puppetstring Model Viewer", windowSettings.width, windowSettings.height);
         
         // Initialize Inochi2D
         inInit(&inGetTime);
