@@ -239,7 +239,7 @@ void insSceneCleanup() {
     }
 }
 
-void insUpdateScene() {
+void insUpdateScene() { 
     // Get viewport
     int viewportWidth, viewportHeight;
     inGetViewport(viewportWidth, viewportHeight);
@@ -249,6 +249,27 @@ void insUpdateScene() {
 
     // Update virtual spaces
     insScene.space.update();
+
+    // Scene Colors
+    float[4] sceneBGColor = [0, 0, 0, 0];
+    float[3] sceneLighting = [1, 1, 1];
+    
+    if (insScene.space.currentZone) {
+
+        sceneBGColor[0] = insScene.space.currentZone.getBlendshapeFor("psBackgroundRed");
+        sceneBGColor[1] = insScene.space.currentZone.getBlendshapeFor("psBackgroundGreen");
+        sceneBGColor[2] = insScene.space.currentZone.getBlendshapeFor("psBackgroundBlue");
+        sceneBGColor[3] = insScene.space.currentZone.getBlendshapeFor("psBackgroundAlpha");
+
+        inSetClearColor(sceneBGColor[0], sceneBGColor[1], sceneBGColor[2], sceneBGColor[3]);
+
+        sceneLighting[0] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightRed");
+        sceneLighting[1] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightGreen");
+        sceneLighting[2] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightBlue");
+
+        inSceneAmbientLight.vector = sceneLighting;
+
+    }
 
     // Render the waifu trashcan outside of the main FB
     glEnable(GL_BLEND);
