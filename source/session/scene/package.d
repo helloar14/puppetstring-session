@@ -263,11 +263,25 @@ void insUpdateScene() {
 
         inSetClearColor(sceneBGColor[0], sceneBGColor[1], sceneBGColor[2], sceneBGColor[3]);
 
-        sceneLighting[0] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightRed");
-        sceneLighting[1] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightGreen");
-        sceneLighting[2] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightBlue");
+        float enableAmbientLight = insScene.space.currentZone.getBlendshapeFor("psEnableAmbientLight");
 
-        inSceneAmbientLight.vector = sceneLighting;
+        if (enableAmbientLight == 1) {
+
+            insScene.shouldPostProcess = true;
+    
+            sceneLighting[0] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightRed");
+            sceneLighting[1] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightGreen");
+            sceneLighting[2] = insScene.space.currentZone.getBlendshapeFor("psAmbientLightBlue");
+    
+            inSceneAmbientLight.vector = sceneLighting;
+
+        } else if (insScene.shouldPostProcess) {
+
+            insScene.shouldPostProcess = false;
+
+            inSceneAmbientLight.vector = [1, 1, 1];
+
+        }
 
     }
 
