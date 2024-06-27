@@ -263,16 +263,22 @@ void insUpdateScene() {
 
         inSetClearColor(sceneBGColor[0], sceneBGColor[1], sceneBGColor[2], sceneBGColor[3]);
 
-        foreach(i, ref sceneItem; insScene.sceneItems) {
+        float enablePrecisionTransform = insScene.space.currentZone.getBlendshapeFor("psEnablePrecisionTransform");
 
-            auto puppet = sceneItem.puppet;
+        if (enablePrecisionTransform == 1) {
 
-            puppet.transform.scale.x = insScene.space.currentZone.getBlendshapeFor("psModelScaleX");
-            puppet.transform.scale.y = insScene.space.currentZone.getBlendshapeFor("psModelScaleY");
+            foreach(i, ref sceneItem; insScene.sceneItems) {
+    
+                auto puppet = sceneItem.puppet;
+    
+                puppet.transform.scale.x = insScene.space.currentZone.getBlendshapeFor("psModelScaleX");
+                puppet.transform.scale.y = insScene.space.currentZone.getBlendshapeFor("psModelScaleY");
+    
+                puppet.transform.translation.x = insScene.space.currentZone.getBlendshapeFor("psModelTranslationX");
+                puppet.transform.translation.y = insScene.space.currentZone.getBlendshapeFor("psModelTranslationY");
+                    
+            }
 
-            puppet.transform.translation.x = insScene.space.currentZone.getBlendshapeFor("psModelTranslationX");
-            puppet.transform.translation.y = insScene.space.currentZone.getBlendshapeFor("psModelTranslationY");
-                
         }
 
         float enableAmbientLight = insScene.space.currentZone.getBlendshapeFor("psEnableAmbientLight");
@@ -296,6 +302,8 @@ void insUpdateScene() {
         }
 
     }
+
+    /*
 
     // Render the waifu trashcan outside of the main FB
     glEnable(GL_BLEND);
@@ -333,6 +341,8 @@ void insUpdateScene() {
         glFlush();
     }
     glDisable(GL_BLEND);
+
+    */
 
     inBeginScene();
 
@@ -448,8 +458,6 @@ private {
 }
 
 void insInteractWithScene() {
-
-    /*
 
     // Skip doing stuff is mouse drag begin in the UI
     if (inInputMouseDownBeganInUI(MouseButton.Left)) return;
@@ -597,7 +605,7 @@ void insInteractWithScene() {
                 5
             );
         }
-        
+        /*
 
         if (isDragDown && isMouseOverDelete) {
             
@@ -619,7 +627,9 @@ void insInteractWithScene() {
                 inGetDeltaTime()
             );
         } else {
-
+        
+        */
+        
             draggingPuppet.transform.translation = dampen(
                 draggingPuppet.transform.translation,
                 vec3(targetPos, 0),
@@ -632,8 +642,8 @@ void insInteractWithScene() {
                 vec2(targetScale),
                 inGetDeltaTime()
             );
-        }
+        
+        //}
     } else isDragDown = false;
-
-    */
+    
 }
