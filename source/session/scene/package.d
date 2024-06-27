@@ -263,6 +263,18 @@ void insUpdateScene() {
 
         inSetClearColor(sceneBGColor[0], sceneBGColor[1], sceneBGColor[2], sceneBGColor[3]);
 
+        foreach(i, ref sceneItem; insScene.sceneItems) {
+
+            auto puppet = sceneItem.puppet;
+
+            puppet.transform.scale.x = insScene.space.currentZone.getBlendshapeFor("psModelScaleX");
+            puppet.transform.scale.y = insScene.space.currentZone.getBlendshapeFor("psModelScaleY");
+
+            puppet.transform.translation.x = insScene.space.currentZone.getBlendshapeFor("psModelTranslationX");
+            puppet.transform.translation.y = insScene.space.currentZone.getBlendshapeFor("psModelTranslationY");
+                
+        }
+
         float enableAmbientLight = insScene.space.currentZone.getBlendshapeFor("psEnableAmbientLight");
 
         if (enableAmbientLight == 1) {
@@ -436,6 +448,8 @@ private {
 }
 
 void insInteractWithScene() {
+
+    /*
 
     // Skip doing stuff is mouse drag begin in the UI
     if (inInputMouseDownBeganInUI(MouseButton.Left)) return;
@@ -620,4 +634,6 @@ void insInteractWithScene() {
             );
         }
     } else isDragDown = false;
+
+    */
 }
