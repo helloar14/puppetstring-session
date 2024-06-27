@@ -32,6 +32,8 @@ jobs:
       run: |
         git clone https://github.com/Inochi2D/i2d-imgui.git --recurse-submodules
         dub add-local i2d-imgui/ "0.8.0"
+        git clone https://github.com/helloar14/ar14-puppetstring-inui.git --recurse-submodules
+        dub add-local ar14-puppetstring-inui/ "1.2.1"
 
     - name: 'Build Inochi Session'
       run: |
@@ -77,6 +79,8 @@ jobs:
       run: |
         git clone https://github.com/Inochi2D/i2d-imgui.git --recurse-submodules
         dub add-local i2d-imgui/ "0.8.0"
+        git clone https://github.com/helloar14/ar14-puppetstring-inui.git --recurse-submodules
+        dub add-local ar14-puppetstring-inui/ "1.2.1"
 
     - name: 'Build Inochi Session'
       run: |
@@ -165,6 +169,8 @@ jobs:
       run: |
         git clone https://github.com/Inochi2D/i2d-imgui.git --recurse-submodules
         dub add-local i2d-imgui/ "0.8.0"
+        git clone https://github.com/helloar14/ar14-puppetstring-inui.git --recurse-submodules
+        dub add-local ar14-puppetstring-inui/ "1.2.1"
 
     - name: 'Build Inochi Session'
       env:
